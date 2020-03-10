@@ -1,14 +1,19 @@
 package main
 
 import (
-	content "github.com/silverswords/fake/content"
-	errcheck "github.com/silverswords/fake/err"
+	"log"
+
+	content "github.com/silverswords/fake/pkg/file"
+	model "github.com/silverswords/fake/pkg/model"
 	router "github.com/silverswords/fake/router"
 )
 
 func main() {
-	jsonData, err := content.GetFileContent(filePath)
-	errcheck.Err(err)
+	jsonData, err := content.GetFileContent(model.FilePath)
+	if err != nil {
+		log.Panicln(err)
+		return
+	}
 
 	router.Router(jsonData)
 }
