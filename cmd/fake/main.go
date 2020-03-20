@@ -1,19 +1,17 @@
 package main
 
-import (
-	"log"
-
-	content "github.com/silverswords/fake/pkg/file"
-	model "github.com/silverswords/fake/pkg/model"
-	router "github.com/silverswords/fake/router"
-)
+import "github.com/silverswords/fake/wsrouter"
 
 func main() {
-	jsonData, err := content.GetFileContent(model.FilePath)
-	if err != nil {
-		log.Panicln(err)
-		return
-	}
+	/*
+		jsonData, err := content.GetFileContent(model.FilePath)
+		if err != nil {
+			log.Panicln(err)
+			return
+		}
 
-	router.Router(jsonData)
+		router.Router(jsonData)
+	*/
+
+	wsrouter.WsRouter()
 }
