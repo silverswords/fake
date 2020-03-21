@@ -6,6 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"github.com/silverswords/fake/wsrouter/midware"
 )
 
 //Upgrader is websocket upgrader
@@ -21,7 +22,9 @@ var upgrader = websocket.Upgrader{
 
 //Upgrade is to upgrade
 func Upgrade(router *gin.Engine) {
+	router.Use(midware.Clients())
+
 	router.GET("/ws", func(c *gin.Context) {
-		Router(c.Writer, c.Request)
+		Router(c.Writer, c.Request, c)
 	})
 }
