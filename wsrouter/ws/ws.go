@@ -25,6 +25,6 @@ func Upgrade(router *gin.Engine) {
 	router.Use(midware.Clients())
 
 	router.GET("/ws", func(c *gin.Context) {
-		Router(c.Writer, c.Request, c)
+		router(c.Writer, c.Request, c)
 	})
 }
