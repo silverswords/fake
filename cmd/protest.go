@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	wsrouter "github.com/silverswords/fake/wsrouter"
+	protest "github.com/silverswords/fake/protest"
 	"github.com/spf13/cobra"
 )
 
@@ -19,7 +19,7 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 
-		wsrouter.WsRouter()
+		protest.PreRouter()
 	},
 }
 

@@ -4,13 +4,12 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	file "github.com/silverswords/fake/pkg/file"
 	model "github.com/silverswords/fake/pkg/model"
 )
 
 //Ptest is probability test
-func Ptest(w http.ResponseWriter, c *gin.Context) {
+func Ptest(w http.ResponseWriter) {
 	flag := rand.Intn(100)
 
 	m, _ := file.GetFileInt(model.FileProPath)

@@ -3,9 +3,9 @@ package cmd
 import (
 	"log"
 
+	jsonpath "github.com/silverswords/fake/jsonpath"
 	content "github.com/silverswords/fake/pkg/file"
 	"github.com/silverswords/fake/pkg/model"
-	router "github.com/silverswords/fake/router"
 	"github.com/spf13/cobra"
 )
 
@@ -27,7 +27,7 @@ to quickly create a Cobra application.`,
 			return
 		}
 
-		router.Router(jsonData)
+		jsonpath.Router(jsonData)
 	},
 }
 
