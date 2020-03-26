@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/delay/page"
+	"github.com/silverswords/fake/app/delay/page"
 )
 
 //Delay is to delay response

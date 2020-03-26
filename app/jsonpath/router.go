@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/jsonpath/page"
+	"github.com/silverswords/fake/app/jsonpath/page"
 )
 
 //Router is to create router

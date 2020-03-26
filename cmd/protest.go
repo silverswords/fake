@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	protest "github.com/silverswords/fake/protest"
+	protest "github.com/silverswords/fake/app/protest"
 	"github.com/spf13/cobra"
 )
 

@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/protest/midware"
-	"github.com/silverswords/fake/protest/page"
+	"github.com/silverswords/fake/app/protest/midware"
+	"github.com/silverswords/fake/app/protest/page"
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 

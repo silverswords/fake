@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	cookie "github.com/silverswords/fake/cookie"
+	cookie "github.com/silverswords/fake/app/cookie"
 	"github.com/spf13/cobra"
 )
 

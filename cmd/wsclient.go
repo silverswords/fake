@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	"github.com/silverswords/fake/wsclient"
+	"github.com/silverswords/fake/app/wsclient"
 
 	"github.com/spf13/cobra"
 )

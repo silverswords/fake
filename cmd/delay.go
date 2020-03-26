@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	delay "github.com/silverswords/fake/delay"
+	delay "github.com/silverswords/fake/app/delay"
 	"github.com/spf13/cobra"
 )
 

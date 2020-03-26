@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	jsonpath "github.com/silverswords/fake/jsonpath"
+	jsonpath "github.com/silverswords/fake/app/jsonpath"
 	content "github.com/silverswords/fake/pkg/file"
 	"github.com/silverswords/fake/pkg/model"
 	"github.com/spf13/cobra"
