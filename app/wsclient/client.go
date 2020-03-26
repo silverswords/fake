@@ -19,6 +19,13 @@ func WsClient() {
 	defer c.Close()
 
 	for {
-		//do something
+		_, message, err := c.ReadMessage()
+		if err != nil {
+			log.Println("read:", err)
+			return
+		}
+		log.Printf("recv: %s", message)
+		return
 	}
+
 }

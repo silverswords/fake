@@ -19,25 +19,25 @@ func PreRouter() {
 	router.Run(":8001")
 }
 
-//Upgrade is to upgrade
+//Upgrade is to do router
 func Upgrade(router *gin.Engine) {
 	router.Use(midware.Clients())
 
-	router.GET("/protest", func(c *gin.Context) {
+	router.GET("/ws", func(c *gin.Context) {
 		Router(c.Writer, c.Request)
 	})
 }
 
-//Router is to do
+//Router is to do upgrade and do other things
 func Router(w http.ResponseWriter, r *http.Request) {
-	_, err := ws.Upgrader.Upgrade(w, r, nil)
+	c, err := ws.Upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println(err)
 		return
 	}
+	defer c.Close()
 
 	for {
-		page.Ptest(w)
-		return
+		page.Ptest(c)
 	}
 }
