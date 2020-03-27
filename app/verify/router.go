@@ -5,7 +5,7 @@ import (
 	"github.com/silverswords/fake/app/verify/page"
 )
 
-// Verify is to run verifying infomation
+// Verify is to run verifying information
 func Verify() {
 	router := gin.Default()
 

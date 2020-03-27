@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//JSONCon is a page
+//JSONCon is to response json path
 func JSONCon(router *gin.Engine, jsonData map[string]interface{}) {
 	for k, v := range jsonData {
 		value, _ := json.Marshal(v)

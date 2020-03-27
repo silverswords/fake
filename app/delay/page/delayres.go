@@ -8,7 +8,7 @@ import (
 	"github.com/silverswords/fake/pkg/model"
 )
 
-//Delay is to delay response
+//Delay is to do delay response
 func Delay(router *gin.Engine) {
 	router.GET("/delay", delay)
 }

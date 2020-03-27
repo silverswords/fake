@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	model "github.com/silverswords/fake/app/verify/medel"
+	model "github.com/silverswords/fake/app/verify/page/model"
 )
 
-//Verify is to do Verifying
+//Verify is to do Verifying information
 func Verify(router *gin.Engine) {
 	router.POST("/info", info)
 }

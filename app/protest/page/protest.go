@@ -8,7 +8,7 @@ import (
 	model "github.com/silverswords/fake/pkg/model"
 )
 
-//Ptest is probability test
+//Ptest is probability test with multi response
 func Ptest(c *websocket.Conn) {
 	flag := rand.Intn(100)
 

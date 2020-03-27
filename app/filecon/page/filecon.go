@@ -5,7 +5,7 @@ import (
 	"github.com/silverswords/fake/app/filecon/page/model"
 )
 
-//FileCon is a router
+//FileCon is to response file content
 func FileCon(router *gin.Engine) {
 	router.POST("/filecon", filecon)
 }
