@@ -9,13 +9,9 @@ import (
 
 var protestCmd = &cobra.Command{
 	Use:   "protest",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "a fake server to multi return with websocket",
+	Long: `run 
+	go run main.go protest`,
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 

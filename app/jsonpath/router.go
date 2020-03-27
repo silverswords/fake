@@ -5,7 +5,7 @@ import (
 	"github.com/silverswords/fake/app/jsonpath/page"
 )
 
-//Router is to create router
+//Router is to run router
 func Router(jsonData map[string]interface{}) {
 	router := gin.Default()
 

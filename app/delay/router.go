@@ -5,7 +5,7 @@ import (
 	"github.com/silverswords/fake/app/delay/page"
 )
 
-//Delay is to delay response
+//Delay is to run delay response
 func Delay() {
 	router := gin.Default()
 

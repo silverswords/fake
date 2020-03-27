@@ -10,7 +10,7 @@ import (
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
-//PreRouter is to do Upgrade
+//PreRouter is to run pre router for Upgrade
 func PreRouter() {
 	router := gin.Default()
 
