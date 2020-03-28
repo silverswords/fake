@@ -1,15 +1,15 @@
-package page
+package midware
 
 import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	model "github.com/silverswords/fake/app/verify/page/model"
+	model "github.com/silverswords/fake/pkg/model"
 )
 
 //Verify is to do Verifying information
-func Verify(router *gin.Engine) {
-	router.POST("/info", info)
+func Verify() gin.HandlerFunc {
+	return info
 }
 
 func info(c *gin.Context) {

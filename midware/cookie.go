@@ -1,14 +1,14 @@
-package page
+package midware
 
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/silverswords/fake/pkg/file"
-	"github.com/silverswords/fake/pkg/model"
+	model "github.com/silverswords/fake/pkg/model"
 )
 
-//Check is to check if specific cookies are present
-func Check(router *gin.Engine) {
-	router.GET("/cookie", check)
+//Check middleware is to check if specific cookies are present
+func Check() gin.HandlerFunc {
+	return check
 }
 
 func check(c *gin.Context) {

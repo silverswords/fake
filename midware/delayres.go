@@ -1,4 +1,4 @@
-package page
+package midware
 
 import (
 	"time"
@@ -9,8 +9,8 @@ import (
 )
 
 //Delay is to do delay response
-func Delay(router *gin.Engine) {
-	router.GET("/delay", delay)
+func Delay() gin.HandlerFunc {
+	return delay
 }
 
 func delay(c *gin.Context) {

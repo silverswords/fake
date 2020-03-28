@@ -1,13 +1,13 @@
-package page
+package midware
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/filecon/page/model"
+	"github.com/silverswords/fake/pkg/model"
 )
 
 //FileCon is to response file content
-func FileCon(router *gin.Engine) {
-	router.POST("/filecon", filecon)
+func FileCon() gin.HandlerFunc {
+	return filepath
 }
 
 func filecon(c *gin.Context) {
