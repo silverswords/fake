@@ -7,7 +7,7 @@ import (
 
 //FileCon is to response file content
 func FileCon() gin.HandlerFunc {
-	return filepath
+	return filecon
 }
 
 func filecon(c *gin.Context) {

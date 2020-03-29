@@ -10,7 +10,7 @@ import (
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
-//PreRouter is to run pre router for Upgrade
+///PreRouter is to run pre router for Upgrade
 func PreRouter() {
 	router := gin.Default()
 
@@ -38,6 +38,7 @@ func Router(w http.ResponseWriter, r *http.Request) {
 	defer c.Close()
 
 	for {
-		page.Ptest(c)
+		page.Ptest(c, w)
+		return
 	}
 }
