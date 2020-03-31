@@ -59,3 +59,29 @@ func GetFileInt(filePath string) (map[string]int, error) {
 
 	return jsonData, nil
 }
+
+//GetFilefloat32 to get file content about float32
+func GetFilefloat32(filePath string) (map[string]float32, error) {
+	var jsonData map[string]float32
+
+	file, err := os.Open(filePath)
+	if err != nil {
+		log.Println(err)
+		return nil, errors.New("open error")
+	}
+	defer file.Close()
+
+	jsoned, err := ioutil.ReadAll(file)
+	if err != nil {
+		log.Panicln(err)
+		return nil, errors.New("read error")
+	}
+
+	err = json.Unmarshal(jsoned, &jsonData)
+	if err != nil {
+		log.Println(err)
+		return nil, errors.New("unmarshal error")
+	}
+
+	return jsonData, nil
+}

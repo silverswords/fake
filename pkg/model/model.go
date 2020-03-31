@@ -11,6 +11,8 @@ var (
 	FileCookiePath = "/Users/lovae/go/src/github.com/silverswords/fake/config/cookie.json"
 	//FilePath is file path for response file content
 	FilePath = "/Users/lovae/go/src/github.com/silverswords/fake/config/file.txt"
+	// FileCodePath is the file path of response file
+	FileCodePath = "/Users/lovae/go/src/github.com/silverswords/fake/code.json"
 )
 
 //InFor is the information of bode

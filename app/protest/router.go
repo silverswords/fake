@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/protest/midware"
 	"github.com/silverswords/fake/app/protest/page"
+	"github.com/silverswords/fake/midware"
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
@@ -22,6 +22,7 @@ func PreRouter() {
 //Upgrade is to do router
 func Upgrade(router *gin.Engine) {
 	router.Use(midware.Clients())
+	router.Use(midware.CodeLogger())
 
 	router.GET("/ws", func(c *gin.Context) {
 		Router(c.Writer, c.Request)
