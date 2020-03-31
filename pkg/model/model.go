@@ -13,6 +13,8 @@ var (
 	FilePath = "/Users/lovae/go/src/github.com/silverswords/fake/config/file.txt"
 	// FileCodePath is the file path of response file
 	FileCodePath = "/Users/lovae/go/src/github.com/silverswords/fake/code.json"
+	// FileCodeisTest is the file path of istest
+	FileCodeisTest = "/Users/lovae/go/src/github.com/silverswords/fake/config/istest.json"
 )
 
 //InFor is the information of bode

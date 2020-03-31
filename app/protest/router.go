@@ -7,6 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/silverswords/fake/app/protest/page"
 	"github.com/silverswords/fake/midware"
+	"github.com/silverswords/fake/pkg/file"
+	"github.com/silverswords/fake/pkg/model"
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
@@ -39,7 +41,17 @@ func Router(w http.ResponseWriter, r *http.Request) {
 	defer c.Close()
 
 	for {
-		page.Ptest(c, w)
+		if isTest() {
+			page.Ptest(c, w)
+		} else {
+			page.Suctest(c, w)
+		}
 		return
 	}
+}
+
+func isTest() bool {
+	istestMap, _ := file.GetFileBool(model.FileCodeisTest)
+
+	return istestMap["istest"]
 }

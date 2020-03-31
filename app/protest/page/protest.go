@@ -33,3 +33,8 @@ func Ptest(c *websocket.Conn, w http.ResponseWriter) {
 		m[s[i+1]] = m[s[i+1]] + m[s[i]]
 	}
 }
+
+// Suctest is always to response 200 succeed
+func Suctest(c *websocket.Conn, w http.ResponseWriter) {
+	http.Error(w, "succeed", 200)
+}
