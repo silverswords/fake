@@ -13,7 +13,6 @@ import (
 	"github.com/silverswords/fake/pkg/file"
 	pkgfile "github.com/silverswords/fake/pkg/file"
 	model "github.com/silverswords/fake/pkg/model"
-	pkgmodel "github.com/silverswords/fake/pkg/model"
 )
 
 type bodyLogWriter struct {
@@ -74,7 +73,7 @@ func printStatisticsMap(statisticsMap map[string]float32, statusCode int) {
 	}
 	defer file.Close()
 
-	m, err := pkgfile.GetFileInt(pkgmodel.FileCodePath)
+	m, err := pkgfile.GetFileInt("code.json")
 	if err != nil {
 		log.Println(err)
 	}
