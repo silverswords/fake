@@ -11,7 +11,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/silverswords/fake/pkg/file"
-	pkgfile "github.com/silverswords/fake/pkg/file"
 	model "github.com/silverswords/fake/pkg/model"
 )
 
@@ -66,19 +65,19 @@ func printStatisticsMap(statisticsMap map[string]float32, statusCode int) {
 		return
 	}
 
-	file, err := os.OpenFile("code.json", os.O_WRONLY|os.O_CREATE, 0666)
+	codejsonfile, err := os.OpenFile("code.json", os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		log.Println(err)
 		return
 	}
-	defer file.Close()
+	defer codejsonfile.Close()
 
-	m, err := pkgfile.GetFileInt("code.json")
+	m, err := file.GetFileInt("code.json")
 	if err != nil {
 		log.Println(err)
 	}
 	if m == nil {
-		writer := bufio.NewWriter(file)
+		writer := bufio.NewWriter(codejsonfile)
 		writer.Write(statisticsJSON)
 		writer.Flush()
 	} else {
@@ -95,7 +94,7 @@ func printStatisticsMap(statisticsMap map[string]float32, statusCode int) {
 			return
 		}
 
-		writer := bufio.NewWriter(file)
+		writer := bufio.NewWriter(codejsonfile)
 		writer.Write(statisticsJSON)
 		writer.Flush()
 	}

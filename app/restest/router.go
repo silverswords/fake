@@ -11,7 +11,7 @@ import (
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
-///PreRouter is to run pre router
+//PreRouter is to run pre router
 func PreRouter() {
 	router := gin.Default()
 

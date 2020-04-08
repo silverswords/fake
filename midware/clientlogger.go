@@ -11,7 +11,7 @@ func Clients() gin.HandlerFunc {
 
 		clientIP := c.ClientIP()
 
-		file.OWFile("gin.clients", clientIP)
+		file.WriteFile("gin.clients", clientIP)
 
 		return
 	}

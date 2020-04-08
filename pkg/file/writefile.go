@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-//OWFile is to open and write
-func OWFile(filename string, fileContext string) {
+//WriteFile is to write file
+func WriteFile(filename string, fileContext string) {
 	sumfile, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		log.Println(err)
