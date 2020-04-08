@@ -7,14 +7,14 @@ import (
 
 //IsTest is to judge test
 func IsTest() bool {
-	restestMap, _ := file.GetFileBool(model.FileCodeisTest)
+	restestMap, _ := file.GetFileBool(model.FileIsRestestTest)
 
 	return restestMap["istest"]
 }
 
 //IsLogResCode is to judge log response code
 func IsLogResCode() bool {
-	restestMap, _ := file.GetFileBool(model.FileCodeisTest)
+	restestMap, _ := file.GetFileBool(model.FileIsRestestTest)
 
 	return restestMap["islogrescode"]
 }

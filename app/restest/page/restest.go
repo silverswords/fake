@@ -16,7 +16,7 @@ func MultiTest(c *websocket.Conn, w http.ResponseWriter) {
 	rand.Seed(time.Now().UnixNano())
 	flag := rand.Float32()
 
-	m, _ := file.GetFilefloat32(model.FileProPath)
+	m, _ := file.GetFilefloat32(model.FileRestestPath)
 
 	var s []string
 	for key := range m {

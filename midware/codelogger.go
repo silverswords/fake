@@ -43,7 +43,7 @@ func ginBodyLogMiddleware(c *gin.Context) {
 }
 
 func preMap() map[string]float32 {
-	m, _ := file.GetFilefloat32(model.FileProPath)
+	m, _ := file.GetFilefloat32(model.FileRestestPath)
 
 	for key := range m {
 		m[key] = 0

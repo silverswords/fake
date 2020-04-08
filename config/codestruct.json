@@ -1,0 +1,8 @@
+{
+    "PackageName": "pkg",
+    "StructName":  "MyStruct",
+    "Fields": {
+    	"Field1":"",
+        "Field2":""
+    }
+}
