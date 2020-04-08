@@ -4,7 +4,7 @@ import (
 	"log"
 
 	jsonpath "github.com/silverswords/fake/app/jsonpath"
-	content "github.com/silverswords/fake/pkg/file"
+	file "github.com/silverswords/fake/pkg/file"
 	"github.com/silverswords/fake/pkg/model"
 	"github.com/spf13/cobra"
 )
@@ -17,7 +17,7 @@ var jsonpathCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 
-		jsonData, err := content.GetFileInterface(model.FileMultiPath)
+		jsonData, err := file.GetFileInterface(model.FileMultiPath)
 		if err != nil {
 			log.Panicln(err)
 			return

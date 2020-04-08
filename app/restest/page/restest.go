@@ -11,8 +11,8 @@ import (
 	model "github.com/silverswords/fake/pkg/model"
 )
 
-//Ptest is probability test with multi response
-func Ptest(c *websocket.Conn, w http.ResponseWriter) {
+//MultiTest is probability test with multi response by restest in config
+func MultiTest(c *websocket.Conn, w http.ResponseWriter) {
 	rand.Seed(time.Now().UnixNano())
 	flag := rand.Float32()
 
@@ -32,9 +32,4 @@ func Ptest(c *websocket.Conn, w http.ResponseWriter) {
 
 		m[s[i+1]] = m[s[i+1]] + m[s[i]]
 	}
-}
-
-// Suctest is always to response 200 succeed
-func Suctest(c *websocket.Conn, w http.ResponseWriter) {
-	http.Error(w, "succeed", 200)
 }

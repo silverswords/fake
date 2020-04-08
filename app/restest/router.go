@@ -1,30 +1,30 @@
-package router
+package restest
 
 import (
 	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/protest/page"
+	"github.com/silverswords/fake/app/restest/model"
+	"github.com/silverswords/fake/app/restest/page"
 	"github.com/silverswords/fake/midware"
-	"github.com/silverswords/fake/pkg/file"
-	"github.com/silverswords/fake/pkg/model"
 	ws "github.com/silverswords/fake/wsconfig/ws"
 )
 
-///PreRouter is to run pre router for Upgrade
+///PreRouter is to run pre router
 func PreRouter() {
 	router := gin.Default()
 
-	Upgrade(router)
+	wsconfig(router)
 
 	router.Run(":8001")
 }
 
-//Upgrade is to do router
-func Upgrade(router *gin.Engine) {
-	router.Use(midware.Clients())
-	router.Use(midware.CodeLogger())
+//wsconfig is to add midware and do router for ws
+func wsconfig(router *gin.Engine) {
+	if model.IsLogResCode() {
+		router.Use(midware.CodeLogger())
+	}
 
 	router.GET("/ws", func(c *gin.Context) {
 		Router(c.Writer, c.Request)
@@ -41,17 +41,11 @@ func Router(w http.ResponseWriter, r *http.Request) {
 	defer c.Close()
 
 	for {
-		if isTest() {
-			page.Ptest(c, w)
+		if model.IsTest() {
+			page.MultiTest(c, w)
 		} else {
 			page.Suctest(c, w)
 		}
 		return
 	}
-}
-
-func isTest() bool {
-	istestMap, _ := file.GetFileBool(model.FileCodeisTest)
-
-	return istestMap["istest"]
 }

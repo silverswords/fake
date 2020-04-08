@@ -3,22 +3,22 @@ package cmd
 import (
 	"log"
 
-	protest "github.com/silverswords/fake/app/protest"
+	restest "github.com/silverswords/fake/app/restest"
 	"github.com/spf13/cobra"
 )
 
-var protestCmd = &cobra.Command{
-	Use:   "protest",
+var restestCmd = &cobra.Command{
+	Use:   "restest",
 	Short: "a fake server to multi return with websocket",
 	Long: `run 
-	go run main.go protest`,
+	go run main.go restest`,
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 
-		protest.PreRouter()
+		restest.PreRouter()
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(protestCmd)
+	rootCmd.AddCommand(restestCmd)
 }
