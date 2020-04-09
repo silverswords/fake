@@ -11,13 +11,6 @@ import (
 	"github.com/silverswords/fake/pkg/model"
 )
 
-type infoStruct struct {
-	ID    int    `json:"id"`
-	Name  string `json:"name"`
-	Phone string `json:"phone"`
-	Email string `json:"email"`
-}
-
 var id []int
 var name []string
 var phone []string
@@ -36,7 +29,6 @@ func generater(c *gin.Context) {
 	}
 
 	infoMap := configMap["info"].(map[string]interface{})
-
 	number := int(configMap["number"].(float64))
 
 	for k := range infoMap {
@@ -54,12 +46,22 @@ func generater(c *gin.Context) {
 		}
 	}
 
-	for i := 0; i < int(configMap["number"].(float64)); i++ {
-		info := &infoStruct{
-			ID:    id[i],
-			Name:  name[i],
-			Phone: phone[i],
-			Email: email[i],
+	for i := 0; i < number; i++ {
+		info := &infoModel.InfoStruct{}
+
+		for k := range infoMap {
+			if k == "id" {
+				info.ID = id[i]
+			} else if k == "name" {
+				info.Name = name[i]
+			} else if k == "phone" {
+				info.Phone = phone[i]
+			} else if k == "email" {
+				info.Email = email[i]
+			} else {
+				fmt.Println("config parameter error")
+				return
+			}
 		}
 
 		infoJSON, err := json.Marshal(info)
