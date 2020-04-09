@@ -17,6 +17,8 @@ var (
 	FileIsRestestTest = "/Users/lovae/go/src/github.com/silverswords/fake/config/isrestest.json"
 	// FileCodeGenerate is the file path of code generate
 	FileCodeGenerate = "/Users/lovae/go/src/github.com/silverswords/fake/config/codestruct.json"
+	//FileInfo is the file path of info
+	FileInfo = "/Users/lovae/go/src/github.com/silverswords/fake/config/info.json"
 )
 
 //InFor is the information of bode
