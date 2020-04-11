@@ -5,7 +5,7 @@ import (
 	"github.com/silverswords/fake/app/codegenerate/page"
 )
 
-//Router is to
+//Router is to run code generate router
 func Router() {
 	router := gin.Default()
 
