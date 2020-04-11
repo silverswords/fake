@@ -2,24 +2,27 @@ package model
 
 var (
 	//FileMultiPath is the path of multi
-	FileMultiPath = "/Users/lovae/go/src/github.com/silverswords/fake/config/multi.json"
+	FileMultiPath = fileRoot + "github.com/silverswords/fake/config/multi.json"
 	//FileRestestPath is the path of pro
-	FileRestestPath = "/Users/lovae/go/src/github.com/silverswords/fake/config/restest.json"
+	FileRestestPath = fileRoot + "github.com/silverswords/fake/config/restest.json"
 	//FileDelayPath is the path of delay time
-	FileDelayPath = "/Users/lovae/go/src/github.com/silverswords/fake/config/delay.json"
+	FileDelayPath = fileRoot + "github.com/silverswords/fake/config/delay.json"
 	//FileCookiePath is the path of cookie
-	FileCookiePath = "/Users/lovae/go/src/github.com/silverswords/fake/config/cookie.json"
+	FileCookiePath = fileRoot + "github.com/silverswords/fake/config/cookie.json"
 	//FilePath is file path for response file content
-	FilePath = "/Users/lovae/go/src/github.com/silverswords/fake/config/file.txt"
+	FilePath = fileRoot + "github.com/silverswords/fake/config/file.txt"
 	// FileCodePath is the file path of response file
-	FileCodePath = "/Users/lovae/go/src/github.com/silverswords/fake/code.json"
+	FileCodePath = fileRoot + "github.com/silverswords/fake/code.json"
 	// FileIsRestestTest is the file path of istest
-	FileIsRestestTest = "/Users/lovae/go/src/github.com/silverswords/fake/config/isrestest.json"
+	FileIsRestestTest = fileRoot + "github.com/silverswords/fake/config/isrestest.json"
 	// FileCodeGenerate is the file path of code generate
-	FileCodeGenerate = "/Users/lovae/go/src/github.com/silverswords/fake/config/codestruct.json"
+	FileCodeGenerate = fileRoot + "github.com/silverswords/fake/config/codestruct.json"
 	//FileInfo is the file path of info
-	FileInfo = "/Users/lovae/go/src/github.com/silverswords/fake/config/info.json"
+	FileInfo = fileRoot + "github.com/silverswords/fake/config/info.json"
 )
+
+//need to modify your file path
+var fileRoot = "/Users/lovae/go/src/"
 
 //InFor is the information of bode
 type InFor struct {
