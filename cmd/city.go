@@ -9,14 +9,13 @@ import (
 
 var cityCmd = &cobra.Command{
 	Use:   "city",
-	Short: "a fake server to multi return with websocket",
+	Short: "a fake server to get router about city of China ",
 	Long: `run 
-	go run main.go restest`,
+	go run main.go city`,
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 
 		city.Router()
-
 	},
 }
 
