@@ -8,7 +8,7 @@ import (
 
 //Month is to run month
 func Month(router *gin.Engine) {
-	router.GET("/Month", month)
+	router.GET("/month", month)
 }
 
 func month(c *gin.Context) {
