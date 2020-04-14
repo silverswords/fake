@@ -3,6 +3,7 @@ package page
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/goroom/rand"
+	"github.com/silverswords/fake/app/date/model"
 )
 
 //Year is to run year
@@ -18,7 +19,22 @@ func year(c *gin.Context) {
 
 //GetYear is to get year
 func GetYear() int {
-	year := rand.GetRand().RandRange(2018, 2020)
+	var year int
+
+	if model.IsConfig("year") {
+		minYear, maxYear := getYearData()
+		year = rand.GetRand().RandRange(minYear, maxYear)
+	} else {
+		year = rand.GetRand().RandRange(2018, 2020)
+	}
 
 	return year
+}
+
+func getYearData() (minYear int, maxYear int) {
+	dateMap := model.GetDateConfig()
+	yearMap := dateMap["year"].(map[string]interface{})
+	minYear = int(yearMap["minyear"].(float64))
+	maxYear = int(yearMap["maxyear"].(float64))
+	return
 }

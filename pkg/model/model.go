@@ -19,6 +19,8 @@ var (
 	FileCodeGenerate = fileRoot + "github.com/silverswords/fake/config/codestruct.json"
 	//FileInfo is the file path of info
 	FileInfo = fileRoot + "github.com/silverswords/fake/config/info.json"
+	//FileDate is the file path of date
+	FileDate = fileRoot + "github.com/silverswords/fake/config/date.json"
 )
 
 //need to modify your file path

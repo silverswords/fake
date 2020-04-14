@@ -3,6 +3,7 @@ package page
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/goroom/rand"
+	"github.com/silverswords/fake/app/date/model"
 )
 
 //Hour is to run hour
@@ -18,7 +19,22 @@ func hour(c *gin.Context) {
 
 //GetHour is to get hour
 func GetHour() int {
-	hour := rand.GetRand().RandRange(0, 24)
+	var hour int
+
+	if model.IsConfig("hour") {
+		minHour, maxHour := getHourData()
+		hour = rand.GetRand().RandRange(minHour, maxHour)
+	} else {
+		hour = rand.GetRand().RandRange(0, 23)
+	}
 
 	return hour
+}
+
+func getHourData() (minHour int, maxHour int) {
+	dateMap := model.GetDateConfig()
+	hourMap := dateMap["hour"].(map[string]interface{})
+	minHour = int(hourMap["minhour"].(float64))
+	maxHour = int(hourMap["maxhour"].(float64))
+	return
 }

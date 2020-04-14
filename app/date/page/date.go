@@ -17,6 +17,7 @@ func date(c *gin.Context) {
 	date.Month = GetMonth()
 	date.Day = GetDay(28)
 	date.Hour = GetHour()
+	date.Minute = GetMinute()
 	date.Second = GetSecond()
 
 	c.JSON(200, date)

@@ -14,6 +14,7 @@ func Router() {
 	page.Month(router)
 	page.Day(router)
 	page.Hour(router)
+	page.Minute(router)
 	page.Second(router)
 
 	router.Run(":8005")

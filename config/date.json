@@ -1,0 +1,26 @@
+{
+    "year":{
+        "minyear": 2012,
+        "maxyear": 2022
+    },
+    "month":{
+        "January": "", 
+        "February": ""
+    },
+    "day":{
+        "minday": 1, 
+        "maxday": 28
+    },
+    "hour":{
+        "minhour": 8,
+        "maxhour": 18
+    },
+    "minute":{
+        "minminute": 0,
+        "maxminute": 59
+    },
+    "second":{
+        "minsecond": 0,
+        "maxsecond": 59
+    }
+}

@@ -19,7 +19,28 @@ func month(c *gin.Context) {
 
 //GetMonth is to get month
 func GetMonth() string {
-	month := rand.GetRand().StringArray(&model.MonthData)
+	var month string
 
+	if model.IsConfig("month") {
+		month = getMonthData()
+	} else {
+		month = rand.GetRand().StringArray(&model.MonthData)
+	}
+
+	return month
+}
+
+func getMonthData() string {
+	var month string
+	var months []string
+
+	dateMap := model.GetDateConfig()
+	monthMap := dateMap["month"].(map[string]interface{})
+
+	for k := range monthMap {
+		months = append(months, k)
+	}
+
+	month = rand.GetRand().StringArray(&months)
 	return month
 }
