@@ -1,32 +1,7 @@
 package model
 
-import (
-	"math/rand"
-	"time"
-)
-
-//GetName is to get name
-func GetName(number int) []string {
-	var name []string
-
-	rand.Seed(time.Now().UnixNano())
-
-	for i := 0; i < number; i++ {
-		var first string
-		var last string
-
-		for i := 0; i <= rand.Intn(2); i++ { //随机产生2位或者3位的名
-			first = first + firstName[rand.Intn(firstNameLen-1)]
-		}
-		last = lastName[rand.Intn(lastNameLen-1)]
-
-		name = append(name, last+first)
-	}
-
-	return name
-}
-
-var lastName = []string{
+//LastName is a string slice of lastname
+var LastName = []string{
 	"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋",
 	"沈", "韩", "杨", "朱", "秦", "尤", "许", "何", "吕", "施", "张", "孔", "曹", "严", "华", "金", "魏",
 	"陶", "姜", "戚", "谢", "邹", "喻", "柏", "水", "窦", "章", "云", "苏", "潘", "葛", "奚", "范", "彭",
@@ -47,7 +22,8 @@ var lastName = []string{
 	"太叔", "申屠", "公孙", "仲孙", "轩辕", "令狐", "徐离", "宇文", "长孙", "慕容", "司徒", "司空",
 }
 
-var firstName = []string{
+//FirstName is a string slice of firstname
+var FirstName = []string{
 	"伟", "刚", "勇", "毅", "俊", "峰", "强", "军", "平", "保", "东", "文", "辉", "力", "明", "永", "健", "世", "广", "志", "义",
 	"兴", "良", "海", "山", "仁", "波", "宁", "贵", "福", "生", "龙", "元", "全", "国", "胜", "学", "祥", "才", "发", "武", "新",
 	"利", "清", "飞", "彬", "富", "顺", "信", "子", "杰", "涛", "昌", "成", "康", "星", "光", "天", "达", "安", "岩", "中", "茂",
@@ -67,5 +43,9 @@ var firstName = []string{
 	"宗", "曼", "紫", "逸", "贤", "蝶", "菡", "绿", "蓝", "儿", "翠", "烟", "小", "轩",
 }
 
-var lastNameLen = len(lastName)
-var firstNameLen = len(firstName)
+var (
+	//LastNameLen is the lenth of lastname slice
+	LastNameLen = len(LastName)
+	//FirstNameLen is the lenth of firstname slice
+	FirstNameLen = len(FirstName)
+)

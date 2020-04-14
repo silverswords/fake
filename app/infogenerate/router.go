@@ -10,6 +10,10 @@ func Router() {
 	router := gin.Default()
 
 	page.Generater(router)
+	page.Name(router)
+	page.ID(router)
+	page.Email(router)
+	page.Phone(router)
 
 	router.Run(":8003")
 }

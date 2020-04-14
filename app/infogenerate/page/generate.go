@@ -11,10 +11,10 @@ import (
 	"github.com/silverswords/fake/pkg/model"
 )
 
-var id []int
-var name []string
-var phone []string
-var email []string
+var ids []int
+var names []string
+var phones []string
+var emails []string
 
 //Generater is a generater to generate information
 func Generater(router *gin.Engine) {
@@ -33,13 +33,13 @@ func generater(c *gin.Context) {
 
 	for k := range infoMap {
 		if k == "id" {
-			id = infoModel.GetID(number)
+			ids = GetIDOrderSlice(number)
 		} else if k == "name" {
-			name = infoModel.GetName(number)
+			names = GetNameSlice(number)
 		} else if k == "phone" {
-			phone = infoModel.GetPhone(number)
+			phones = GetPhoneSlice(number)
 		} else if k == "email" {
-			email = infoModel.GetEmail(number)
+			emails = GetEmailSlice(number)
 		} else {
 			fmt.Println("config parameter error")
 			return
@@ -51,13 +51,13 @@ func generater(c *gin.Context) {
 
 		for k := range infoMap {
 			if k == "id" {
-				info.ID = id[i]
+				info.ID = ids[i]
 			} else if k == "name" {
-				info.Name = name[i]
+				info.Name = names[i]
 			} else if k == "phone" {
-				info.Phone = phone[i]
+				info.Phone = phones[i]
 			} else if k == "email" {
-				info.Email = email[i]
+				info.Email = emails[i]
 			} else {
 				fmt.Println("config parameter error")
 				return
