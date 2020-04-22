@@ -21,6 +21,8 @@ var (
 	FileInfo = fileRoot + "github.com/silverswords/fake/config/info.json"
 	//FileDate is the file path of date
 	FileDate = fileRoot + "github.com/silverswords/fake/config/date.json"
+	//PictureCon is the path of picture config
+	PictureCon = fileRoot + "github.com/silverswords/fake/config/picture/"
 )
 
 //need to modify your file path
