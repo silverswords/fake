@@ -1,7 +1,6 @@
 package page
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 
@@ -22,7 +21,6 @@ func GetLongitude() float32 {
 	rand.Seed(time.Now().UnixNano())
 
 	longitude := rand.Float32()*360 - 180
-	fmt.Println(longitude)
 
 	return longitude
 }
