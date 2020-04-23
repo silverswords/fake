@@ -8,5 +8,5 @@ func Place(router *gin.Engine) {
 }
 
 func place(c *gin.Context) {
-	c.String(200, "city: %s", GetCity())
+	c.String(200, "city: %s, country: %s", GetCity(), GetCountryE())
 }

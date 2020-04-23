@@ -23,6 +23,8 @@ var (
 	FileDate = fileRoot + "github.com/silverswords/fake/config/date.json"
 	//PictureCon is the path of picture config
 	PictureCon = fileRoot + "github.com/silverswords/fake/config/picture/"
+	// FileCountryPath is the path of country
+	FileCountryPath = fileRoot + "github.com/yimkh/country/country.json"
 )
 
 //need to modify your file path

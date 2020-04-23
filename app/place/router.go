@@ -10,6 +10,7 @@ func Router() {
 	router := gin.Default()
 
 	page.Place(router)
+	page.Country(router)
 	page.City(router)
 
 	router.Run(":8004")
