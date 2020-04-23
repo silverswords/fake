@@ -7,8 +7,7 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	file "github.com/silverswords/fake/pkg/file"
-	model "github.com/silverswords/fake/pkg/model"
+	"github.com/silverswords/fake/app/restest/model"
 )
 
 //MultiTest is probability test with multi response by restest in config
@@ -16,7 +15,9 @@ func MultiTest(c *websocket.Conn, w http.ResponseWriter) {
 	rand.Seed(time.Now().UnixNano())
 	flag := rand.Float32()
 
-	m, _ := file.GetFilefloat32(model.FileRestestPath)
+	resTest := model.GetResTest()
+
+	m := resTest.Code
 
 	var s []string
 	for key := range m {
