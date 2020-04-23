@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	infoModel "github.com/silverswords/fake/app/infogenerate/model"
+	infoModel "github.com/silverswords/fake/app/info/model"
 	"github.com/silverswords/fake/pkg/file"
 	"github.com/silverswords/fake/pkg/model"
 )

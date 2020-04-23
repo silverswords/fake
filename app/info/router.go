@@ -1,8 +1,8 @@
-package infogenerate
+package info
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/infogenerate/page"
+	"github.com/silverswords/fake/app/info/page"
 )
 
 //Router is to run infogenerate router

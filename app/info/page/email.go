@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/infogenerate/model"
+	"github.com/silverswords/fake/app/info/model"
 )
 
 //Email is to run email

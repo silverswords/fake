@@ -3,22 +3,22 @@ package cmd
 import (
 	"log"
 
-	"github.com/silverswords/fake/app/infogenerate"
+	"github.com/silverswords/fake/app/info"
 	"github.com/spf13/cobra"
 )
 
-var infogenerateCmd = &cobra.Command{
-	Use:   "infogenerate",
+var infoCmd = &cobra.Command{
+	Use:   "info",
 	Short: "a fake server to get router about information generate",
 	Long: `run 
-	go run main.go infogenerate`,
+	go run main.go info`,
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("starting success")
 
-		infogenerate.Router()
+		info.Router()
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(infogenerateCmd)
+	rootCmd.AddCommand(infoCmd)
 }

@@ -1,8 +1,8 @@
-package codegenerate
+package code
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/silverswords/fake/app/codegenerate/page"
+	"github.com/silverswords/fake/app/code/page"
 )
 
 //Router is to run code generate router
