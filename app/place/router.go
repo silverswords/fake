@@ -12,6 +12,7 @@ func Router() {
 	page.Place(router)
 	page.Country(router)
 	page.City(router)
+	page.Coord(router)
 
 	router.Run(":8004")
 }
