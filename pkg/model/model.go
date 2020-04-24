@@ -14,7 +14,7 @@ var (
 	//PictureCon is the path of picture config
 	PictureCon = fileRoot + "github.com/silverswords/fake/config/picture/"
 	// FileCountryPath is the path of country
-	FileCountryPath = fileRoot + "github.com/yimkh/country/country.json"
+	FileCountryPath = fileRoot + "github.com/yimkh/country/place/country.json"
 )
 
 //about midware
