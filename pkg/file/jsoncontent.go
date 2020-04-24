@@ -111,3 +111,12 @@ func GetFileBool(filePath string) (map[string]bool, error) {
 
 	return jsonData, nil
 }
+
+//ToSlice is to get interface key to slice
+func ToSlice(thisMap map[string]interface{}) (thisSlice []string) {
+	for k := range thisMap {
+		thisSlice = append(thisSlice, k)
+	}
+
+	return thisSlice
+}

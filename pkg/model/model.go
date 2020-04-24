@@ -15,6 +15,8 @@ var (
 	PictureCon = fileRoot + "github.com/silverswords/fake/config/picture/"
 	// FileCountryPath is the path of country
 	FileCountryPath = fileRoot + "github.com/yimkh/country/place/country.json"
+	// FileColorPath is the path of color
+	FileColorPath = fileRoot + "github.com/silverswords/fake/config/commerce/commerce.json"
 )
 
 //about midware
