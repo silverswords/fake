@@ -19,7 +19,7 @@ func delay(c *gin.Context) {
 }
 
 func getTime() time.Duration {
-	delay, _ := file.GetFileInt(model.FileDelayPath)
+	delay, _ := file.GetFileInterface(model.FileDelayPath)
 
-	return time.Duration(delay["delaytime"])
+	return time.Duration(delay["delaytime"].(int))
 }

@@ -24,7 +24,6 @@ func GetColor() string {
 	colorMap, err := file.GetFileInterface(model.FileColorPath)
 	if err != nil {
 		log.Println(err)
-		return ""
 	}
 
 	colorSlice := file.ToSlice(colorMap)

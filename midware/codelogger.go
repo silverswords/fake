@@ -43,13 +43,15 @@ func ginBodyLogMiddleware(c *gin.Context) {
 }
 
 func preMap() map[string]float32 {
-	m, _ := file.GetFilefloat32(model.FileRestestPath)
+	m, _ := file.GetFileInterface(model.FileRestestPath)
+
+	preMap := make(map[string]float32, len(m))
 
 	for key := range m {
-		m[key] = 0
+		preMap[key] = 0
 	}
 
-	return m
+	return preMap
 }
 
 func printStatisticsMap(statisticsMap map[string]float32, statusCode int) {
@@ -72,7 +74,14 @@ func printStatisticsMap(statisticsMap map[string]float32, statusCode int) {
 	}
 	defer codejsonfile.Close()
 
-	m, err := file.GetFileInt("code.json")
+	preMap, err := file.GetFileInterface("code.json")
+
+	m := make(map[string]float64, len(preMap))
+
+	for k, v := range preMap {
+		m[k] = v.(float64)
+	}
+
 	if err != nil {
 		log.Println(err)
 	}
